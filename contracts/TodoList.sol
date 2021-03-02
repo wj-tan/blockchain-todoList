@@ -16,6 +16,11 @@ contract TodoList {
 
     mapping(uint => Task) public tasks;
 
+    // Function that is called when the smart contract is ran for the first time
+    constructor() public {
+        createTask("Default Task");
+    }
+
     // Function to put task into the to do list
     function createTask(string memory _content) public {
         taskCount ++;
